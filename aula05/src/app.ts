@@ -8,7 +8,7 @@ app.get("/health", (req: Request, res: Response) => {
 
 app.get("/fibonacci", (req: Request, res: Response) => {
   const elements = Number(req.query.elements);
-  if (isNaN(elements) || (elements < 1 || elements > Number.MAX_VALUE)) {
+  if (isNaN(elements) || (elements <= 1 || elements > Number.MAX_VALUE)) {
     return res.sendStatus(400);
   }
 
